@@ -14,8 +14,8 @@ module.exports.iniciarChat = function(application, req, res){
 
     application.get('io').emit(
         'msgParaClientes',
-        'Teste'
+        {apelido: dadosForm.apelido, mensagem: ' acabou de entrar'}
     )
 
-    res.render("chat")
+    res.render("chat",{dadosForm: dadosForm})
 }
